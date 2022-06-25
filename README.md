@@ -7,7 +7,7 @@
 ## Setup
 Add script
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/wio-typed@1.0.0/build/index.min.js" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/wio-typed@latest/build/index.min.js" />
 ```
 
 ## Attributes
