@@ -119,16 +119,25 @@ function convertDataSetToTypedOptions(el) {
 }
 function initializeEnterView(el, typed) {
     if (el.dataset.wioTypedEnterView) {
+        var isPlayed_1 = false;
         typed.reset(true);
         typed.stop();
         enterView({
             selector: [el],
             enter: function () {
+                if (el.dataset.wioTypedEnterViewOnce !==
+                    "true" &&
+                    isPlayed_1) {
+                    return;
+                }
+                isPlayed_1 = true;
                 typed.reset(true);
                 typed.start();
             },
             exit: function () {
-                typed.stop();
+                if (el.dataset.wioTypedEnterViewOnce !==
+                    "true")
+                    typed.stop();
             },
             offset: parseFloat(el.dataset.wioTypedEnterViewOffset) || 0,
             once: el.dataset.wioTypedEnterViewOnce ===
