@@ -135,16 +135,29 @@ function initializeEnterView(
   typed: Typed
 ) {
   if (el.dataset.wioTypedEnterView) {
+    let isPlayed = false;
     typed.reset(true);
     typed.stop();
     enterView({
       selector: [el],
       enter: () => {
+        if (
+          el.dataset.wioTypedEnterViewOnce !==
+            "true" &&
+          isPlayed
+        ) {
+          return;
+        }
+        isPlayed = true;
         typed.reset(true);
         typed.start();
       },
       exit: () => {
-        typed.stop();
+        if (
+          el.dataset.wioTypedEnterViewOnce !==
+          "true"
+        )
+          typed.stop();
       },
       offset:
         parseFloat(
