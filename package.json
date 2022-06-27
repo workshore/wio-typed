@@ -1,6 +1,6 @@
 {
   "name": "wio-typed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typed.js extention for webflow",
   "main": "build/index.js",
   "repository": "https://github.com/workshore/wio-typed.git",
