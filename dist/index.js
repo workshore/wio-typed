@@ -144,11 +144,17 @@ function initializeEnterView(el, typed) {
                 "true",
         });
     }
+    else {
+        typed.reset(true);
+        typed.stop();
+        typed.start();
+    }
 }
 function initializeTyped(el) {
     var options = convertDataSetToTypedOptions(el);
     var typed = new Typed(el, __assign(__assign({}, options), { onStart: function () {
             el.classList.remove("wio-typed-reset");
+            // console.log("remvoved", el);
         } }));
     return typed;
 }

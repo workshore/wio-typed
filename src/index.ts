@@ -168,6 +168,10 @@ function initializeEnterView(
         el.dataset.wioTypedEnterViewOnce ===
         "true",
     });
+  } else {
+    typed.reset(true);
+    typed.stop();
+    typed.start();
   }
 }
 
@@ -179,8 +183,10 @@ function initializeTyped(el: HTMLElement) {
     ...options,
     onStart: () => {
       el.classList.remove("wio-typed-reset");
+      // console.log("remvoved", el);
     },
   });
+
   return typed;
 }
 
