@@ -28,3 +28,14 @@ Add script
 - `data-wio-typed-enter-view` trigger typing on element is visible on screen
 - `data-wio-typed-enter-view-offset` A value from 0 to 1 of how far from the bottom of the viewport to offset the trigger by. 0 = top of element crosses bottom of viewport (enters screen from bottom), 1 = top of element crosses top of viewport (exits screen top). | `0` to `1`
 - `data-wio-typed-enter-view-once` Whether or not to trigger the animation just once. | `true` or `false`
+
+# Fix : Text is Visible before typing
+add following css style to head
+```html
+<style>
+.wio-typed-reset{
+  opacity: 0;
+}
+</style>
+```
+then add `wio-typed-reset` class to your element 

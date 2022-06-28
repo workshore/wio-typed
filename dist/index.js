@@ -147,7 +147,9 @@ function initializeEnterView(el, typed) {
 }
 function initializeTyped(el) {
     var options = convertDataSetToTypedOptions(el);
-    var typed = new Typed(el, __assign({}, options));
+    var typed = new Typed(el, __assign(__assign({}, options), { onStart: function () {
+            el.classList.remove("wio-typed-reset");
+        } }));
     return typed;
 }
 document.addEventListener("DOMContentLoaded", function () {

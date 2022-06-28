@@ -148,6 +148,7 @@ function initializeEnterView(
         ) {
           return;
         }
+
         isPlayed = true;
         typed.reset(true);
         typed.start();
@@ -176,6 +177,9 @@ function initializeTyped(el: HTMLElement) {
 
   const typed = new Typed(el, {
     ...options,
+    onStart: () => {
+      el.classList.remove("wio-typed-reset");
+    },
   });
   return typed;
 }
