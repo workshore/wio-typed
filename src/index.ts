@@ -154,11 +154,11 @@ function initializeEnterView(
         typed.start();
       },
       exit: () => {
-        if (
-          el.dataset.wioTypedEnterViewOnce !==
-          "true"
-        )
-          typed.stop();
+        // if (
+        //   el.dataset.wioTypedEnterViewOnce !==
+        //   "true"
+        // )
+        // typed.stop();
       },
       offset:
         parseFloat(

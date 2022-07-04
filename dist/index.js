@@ -135,9 +135,11 @@ function initializeEnterView(el, typed) {
                 typed.start();
             },
             exit: function () {
-                if (el.dataset.wioTypedEnterViewOnce !==
-                    "true")
-                    typed.stop();
+                // if (
+                //   el.dataset.wioTypedEnterViewOnce !==
+                //   "true"
+                // )
+                // typed.stop();
             },
             offset: parseFloat(el.dataset.wioTypedEnterViewOffset) || 0,
             once: el.dataset.wioTypedEnterViewOnce ===
